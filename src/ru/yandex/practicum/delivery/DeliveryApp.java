@@ -60,12 +60,12 @@ public class DeliveryApp {
             default -> null;
         };
         if (parcelBox == null) {
-            System.out.println("Неверно выбран тип коробки: " + boxType);
+            System.out.printf("Неверно выбран тип коробки: %d%n", boxType);
         } else {
             List<? extends Parcel> parcels = parcelBox.getAllParcels();
             if (!parcels.isEmpty()) {
                 for (Parcel parcel : parcels) {
-                    System.out.println("Посылка: " + parcel.getDescription() + ", вес: " + parcel.getWeight());
+                    System.out.printf("Посылка: %s, вес: %d%n", parcel.getDescription(), parcel.getWeight());
                 }
             } else {
                 System.out.println("Посылок нет. Коробка пуста.");
@@ -136,7 +136,7 @@ public class DeliveryApp {
                 fragileBox.addParcel(parcel);
                 trackableParcels.add(parcel);
             }
-            default -> System.out.println("Не существующий тип посылки " + parcelType);
+            default -> System.out.printf("Не существующий тип посылки %d%n", parcelType);
         }
     }
 
@@ -160,7 +160,7 @@ public class DeliveryApp {
         for (Parcel parcel : allParcels) {
             totalCost += parcel.calculateDeliveryCost();
         }
-        System.out.println("Общая стоимость всех доставок: " + totalCost);
+        System.out.printf("Общая стоимость всех доставок: %d%n", totalCost);
     }
 
 }
