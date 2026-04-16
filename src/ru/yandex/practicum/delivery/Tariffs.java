@@ -1,13 +1,13 @@
 package ru.yandex.practicum.delivery;
 
-public enum ParcelTariff {
+public enum Tariffs {
     STANDARD(2),
     PERISHABLE(3),
     FRAGILE(4);
 
-    private int cost;
+    private final int cost;
 
-    ParcelTariff(int cost) {
+    Tariffs(int cost) {
         this.cost = cost;
     }
 

@@ -1,5 +1,7 @@
 package ru.yandex.practicum.delivery;
 
+import ru.yandex.practicum.delivery.parcels.*;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -13,7 +15,7 @@ public class DeliveryApp {
     private static final ParcelBox<FragileParcel> fragileBox = new ParcelBox<>(5000);
     private static final ParcelBox<PerishableParcel> perishableBox = new ParcelBox<>(5000);
 
-    public static void main(String[] args) {
+    static void main() {
         boolean running = true;
         while (running) {
             showMenu();
@@ -60,16 +62,21 @@ public class DeliveryApp {
         if (parcelBox == null) {
             System.out.println("Неверно выбран тип коробки: " + boxType);
         } else {
-            for (Parcel parcel : parcelBox.getAllParcels()) {
-                System.out.println("Посылка: " + parcel.getDescription());
+            List<? extends Parcel> parcels = parcelBox.getAllParcels();
+            if (!parcels.isEmpty()) {
+                for (Parcel parcel : parcels) {
+                    System.out.println("Посылка: " + parcel.getDescription() + ", вес: " + parcel.getWeight());
+                }
+            } else {
+                System.out.println("Посылок нет. Коробка пуста.");
             }
         }
     }
 
     private static void reportTrackableStatus() {
-        System.out.println("Запрос на отчет о местонахождении посылок:");
+        System.out.println("Запрос о местонахождении посылок...");
         for (Trackable trackableParcel : trackableParcels) {
-            System.out.print("Введите местоположение посылки: ");
+            System.out.print("Введите новое местоположение посылки: ");
             trackableParcel.reportStatus(scanner.nextLine());
         }
     }

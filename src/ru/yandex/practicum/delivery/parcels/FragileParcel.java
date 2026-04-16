@@ -1,4 +1,6 @@
-package ru.yandex.practicum.delivery;
+package ru.yandex.practicum.delivery.parcels;
+
+import ru.yandex.practicum.delivery.Tariffs;
 
 public class FragileParcel extends Parcel implements Trackable {
 
@@ -8,7 +10,7 @@ public class FragileParcel extends Parcel implements Trackable {
 
     @Override
     public int calculateDeliveryCost() {
-        return getWeight() * ParcelTariff.FRAGILE.getCost();
+        return getWeight() * Tariffs.FRAGILE.getCost();
     }
 
     @Override

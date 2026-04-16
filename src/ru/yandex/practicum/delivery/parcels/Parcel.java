@@ -1,10 +1,10 @@
-package ru.yandex.practicum.delivery;
+package ru.yandex.practicum.delivery.parcels;
 
 public abstract class Parcel {
-    private String description;
-    private int weight;
-    private String deliveryAddress;
-    private int sendDay;
+    private final String description;
+    private final int weight;
+    private final String deliveryAddress;
+    private final int sendDay;
 
     public Parcel(String description, int weight, String deliveryAddress, int sendDay) {
         this.description = description;

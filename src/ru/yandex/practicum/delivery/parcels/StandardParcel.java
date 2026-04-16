@@ -1,4 +1,6 @@
-package ru.yandex.practicum.delivery;
+package ru.yandex.practicum.delivery.parcels;
+
+import ru.yandex.practicum.delivery.Tariffs;
 
 public class StandardParcel extends Parcel {
 
@@ -8,6 +10,6 @@ public class StandardParcel extends Parcel {
 
     @Override
     public int calculateDeliveryCost() {
-        return getWeight() * ParcelTariff.STANDARD.getCost();
+        return getWeight() * Tariffs.STANDARD.getCost();
     }
 }
