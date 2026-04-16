@@ -30,8 +30,4 @@ public class ParcelBox<T extends Parcel> {
             );
         }
     }
-
-    public int getMaxWeight() {
-        return maxWeight;
-    }
 }

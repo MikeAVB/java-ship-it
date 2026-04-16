@@ -136,7 +136,7 @@ public class DeliveryApp {
     private static void sendParcels() {
         // Пройти по allParcels, вызвать packageItem() и deliver()
         if (allParcels.isEmpty()) {
-            System.out.println("Нет посылок, готовых к отпавке!");
+            System.out.println("Нет посылок, готовых к отправке!");
             return;
         }
 

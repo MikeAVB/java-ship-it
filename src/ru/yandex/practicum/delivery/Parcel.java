@@ -17,32 +17,12 @@ public abstract class Parcel {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public int getWeight() {
         return weight;
     }
 
-    public void setWeight(int weight) {
-        this.weight = weight;
-    }
-
-    public String getDeliveryAddress() {
-        return deliveryAddress;
-    }
-
-    public void setDeliveryAddress(String deliveryAddress) {
-        this.deliveryAddress = deliveryAddress;
-    }
-
     public int getSendDay() {
         return sendDay;
-    }
-
-    public void setSendDay(int sendDay) {
-        this.sendDay = sendDay;
     }
 
     public void packageItem() {
